@@ -17,7 +17,7 @@ steps:
 
 - script: |
     npm install
-  displayName: 'npm install and yarn build'
+  displayName: 'npm install '
 
 - task: ArchiveFiles@2
   inputs:
@@ -40,3 +40,5 @@ steps:
     appType: 'webApp'
     WebAppName: 'nodewebapp1'
     packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
+    enableCustomDeployment: true
+    DeploymentType: 'zipDeploy'
