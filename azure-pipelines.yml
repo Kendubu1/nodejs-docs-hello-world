@@ -41,4 +41,4 @@ steps:
     WebAppName: 'nodewebapp1'
     packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
     enableCustomDeployment: true
-    DeploymentType: 'zipDeploy'
+    DeploymentType: 'webDeploy'
