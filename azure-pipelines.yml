@@ -29,7 +29,7 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    PathtoPublish: $(Build.ArtifactStagingDirectory)
     ArtifactName: 'drop'
     publishLocation: 'Container'
 
@@ -41,4 +41,4 @@ steps:
     WebAppName: 'nodewebapp1'
     packageForLinux: $(Build.ArtifactStagingDirectory)/**/*.zip
     enableCustomDeployment: true
-    DeploymentType: 'runFromZip'
+    DeploymentType: 'zipDeploy'
