@@ -21,10 +21,10 @@ steps:
 
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: '$(Build.SourcesDirectory)'
+    rootFolderOrFile: $(Build.SourcesDirectory)
     includeRootFolder: true
     archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
     replaceExistingArchive: true
 
 - task: PublishBuildArtifacts@1
@@ -39,6 +39,6 @@ steps:
     azureSubscription: 'Microsoft Azure Internal Consumption(fbb69af7-f9a0-4e69-ba10-b4eb445e3963)'
     appType: 'webApp'
     WebAppName: 'nodewebapp1'
-    packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
+    packageForLinux: $(Build.ArtifactStagingDirectory)/**/*.zip
     enableCustomDeployment: true
     DeploymentType: 'runFromZip'
